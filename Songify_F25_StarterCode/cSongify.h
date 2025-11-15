@@ -101,18 +101,18 @@ public:
 
 
 private:
-	// Internal structure representing a single song entry in a user's library.
+	//single song entry in a user's library.
 	struct sUserSongEntry
 	{
-		cSong* pSong;                 // Pointer to the shared song in the global catalogue
-		unsigned int rating;          // Rating for THIS user (0-5)
-		unsigned int numPlays;        // Play count for THIS user
+		cSong* pSong; // Pointer to the shared song in the global catalogue
+		unsigned int rating; // 0 - 5
+		unsigned int numPlays;        
 	};
 
-	// Doubly-linked list node for users managed by Songify.
+	
 	struct sUserNode
 	{
-		cPerson person;               // Stored user information
+		cPerson person; // Stored user information
 		sUserSongEntry* pLibrary;     // Dynamic array representing this user's song library
 		unsigned int librarySize;     // Number of valid entries in the library
 		unsigned int libraryCapacity; // Allocated size of the library array
@@ -129,7 +129,7 @@ private:
 		}
 	};
 
-	// Global catalogue of songs (each cSong is heap-allocated and shared by all users).
+	// Global catalogue of songs (heap-allocated)
 	cSong** m_pSongs;
 	unsigned int m_numSongs;
 	unsigned int m_songCapacity;

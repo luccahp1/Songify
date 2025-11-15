@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\lucca\\Documents\\Songify\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A9D683CA-1066-43F0-9388-BBB4F724DB40}|Songify_F25_StarterCode\\Songify_F25_StarterCode.vcxproj|C:\\Users\\lucca\\Documents\\Songify\\Songify_F25_StarterCode\\SongifyTestCode_Example.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9D683CA-1066-43F0-9388-BBB4F724DB40}|Songify_F25_StarterCode\\Songify_F25_StarterCode.vcxproj|solutionrelative:Songify_F25_StarterCode\\SongifyTestCode_Example.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9D683CA-1066-43F0-9388-BBB4F724DB40}|Songify_F25_StarterCode\\Songify_F25_StarterCode.vcxproj|C:\\Users\\lucca\\Documents\\Songify\\Songify_F25_StarterCode\\cSongify_EMPTY_IMPLEMENTATION.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9D683CA-1066-43F0-9388-BBB4F724DB40}|Songify_F25_StarterCode\\Songify_F25_StarterCode.vcxproj|solutionrelative:Songify_F25_StarterCode\\cSongify_EMPTY_IMPLEMENTATION.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9D683CA-1066-43F0-9388-BBB4F724DB40}|Songify_F25_StarterCode\\Songify_F25_StarterCode.vcxproj|C:\\Users\\lucca\\Documents\\Songify\\Songify_F25_StarterCode\\theMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9D683CA-1066-43F0-9388-BBB4F724DB40}|Songify_F25_StarterCode\\Songify_F25_StarterCode.vcxproj|solutionrelative:Songify_F25_StarterCode\\theMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "cSongify_EMPTY_IMPLEMENTATION.cpp",
+              "DocumentMoniker": "C:\\Users\\lucca\\Documents\\Songify\\Songify_F25_StarterCode\\cSongify_EMPTY_IMPLEMENTATION.cpp",
+              "RelativeDocumentMoniker": "Songify_F25_StarterCode\\cSongify_EMPTY_IMPLEMENTATION.cpp",
+              "ToolTip": "C:\\Users\\lucca\\Documents\\Songify\\Songify_F25_StarterCode\\cSongify_EMPTY_IMPLEMENTATION.cpp",
+              "RelativeToolTip": "Songify_F25_StarterCode\\cSongify_EMPTY_IMPLEMENTATION.cpp",
+              "ViewState": "AgIAAJMCAAAAAAAAAAAAAKACAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-15T02:20:29.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SongifyTestCode_Example.cpp",
+              "DocumentMoniker": "C:\\Users\\lucca\\Documents\\Songify\\Songify_F25_StarterCode\\SongifyTestCode_Example.cpp",
+              "RelativeDocumentMoniker": "Songify_F25_StarterCode\\SongifyTestCode_Example.cpp",
+              "ToolTip": "C:\\Users\\lucca\\Documents\\Songify\\Songify_F25_StarterCode\\SongifyTestCode_Example.cpp",
+              "RelativeToolTip": "Songify_F25_StarterCode\\SongifyTestCode_Example.cpp",
+              "ViewState": "AgIAADkCAAAAAAAAAAAAAE4CAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-15T01:40:01.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "theMain.cpp",
+              "DocumentMoniker": "C:\\Users\\lucca\\Documents\\Songify\\Songify_F25_StarterCode\\theMain.cpp",
+              "RelativeDocumentMoniker": "Songify_F25_StarterCode\\theMain.cpp",
+              "ToolTip": "C:\\Users\\lucca\\Documents\\Songify\\Songify_F25_StarterCode\\theMain.cpp",
+              "RelativeToolTip": "Songify_F25_StarterCode\\theMain.cpp",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-15T01:38:20.98Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

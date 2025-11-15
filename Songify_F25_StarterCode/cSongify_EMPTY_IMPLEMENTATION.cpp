@@ -24,6 +24,9 @@ cSongify::~cSongify()
 
 bool cSongify::AddUser(cPerson newPerson, std::string& errorString)
 {
+	// Clear any previous error message.
+	errorString = "";
+
 	// Check for duplicate Songify ID.
 	unsigned int newID = newPerson.getSongifyUniqueUserID();
 	if (this->m_FindUserNodeBySongifyID(newID) != NULL)
@@ -109,6 +112,9 @@ bool cSongify::FindUserBySongifyID(unsigned int SongifyID, cPerson& foundPerson)
 // Returns false if it can't find the person
 bool cSongify::UpdateUser(cPerson& thePerson, std::string& errorString)
 {
+	// Clear any previous error message.
+	errorString = "";
+
 	unsigned int id = thePerson.getSongifyUniqueUserID();
 	unsigned int sin = thePerson.SIN;
 
@@ -139,6 +145,9 @@ bool cSongify::UpdateUser(cPerson& thePerson, std::string& errorString)
 // Returns false if it can't find the person
 bool cSongify::DeleteUser(unsigned int SongifyUserID, std::string& errorString)
 {
+	// Clear any previous error message.
+	errorString = "";
+
 	sUserNode* pUser = this->m_FindUserNodeBySongifyID(SongifyUserID);
 	if (pUser == NULL)
 	{
@@ -447,6 +456,9 @@ bool cSongify::GetUsersByID(cPerson*& pAllTheUsers, unsigned int& sizeOfUserArra
 // If an identical song is added, it's ignored.
 bool cSongify::AddSong(cSong newSong, std::string& errorString)
 {
+	// Clear any previous error message.
+	errorString = "";
+
 	unsigned int newID = newSong.getUniqueID();
 
 	// Check for duplicate unique ID.
@@ -474,6 +486,9 @@ bool cSongify::AddSong(cSong newSong, std::string& errorString)
 // This finds a match, based on the "unique ID", and overwrites the data. 
 bool cSongify::UpdateSong(cSong theSong, std::string& errorString)
 {
+	// Clear any previous error message.
+	errorString = "";
+
 	unsigned int id = theSong.getUniqueID();
 	cSong* pExisting = this->m_FindSongByUniqueID(id);
 	if (pExisting == NULL)
@@ -492,6 +507,9 @@ bool cSongify::UpdateSong(cSong theSong, std::string& errorString)
 // ************************************************************************
 bool cSongify::DeleteSong(unsigned int UniqueSongID, std::string& errorString)
 {
+	// Clear any previous error message.
+	errorString = "";
+
 	// Locate song in the global catalogue.
 	int songIndex = -1;
 	for (unsigned int i = 0; i < this->m_numSongs; i++)
@@ -531,6 +549,9 @@ bool cSongify::DeleteSong(unsigned int UniqueSongID, std::string& errorString)
 // (Note: returns true if the song is already there)
 bool cSongify::AddSongToUserLibrary(unsigned int songifyUserID, unsigned int UniqueSongID, std::string& errorString)
 {
+	// Clear any previous error message.
+	errorString = "";
+
 	sUserNode* pUser = this->m_FindUserNodeBySongifyID(songifyUserID);
 	if (pUser == NULL)
 	{
@@ -574,6 +595,9 @@ bool cSongify::AddSongToUserLibrary(unsigned int songifyUserID, unsigned int Uni
 
 bool cSongify::RemoveSongFromUserLibrary(unsigned int songifyUserID, unsigned int SongifySongID, std::string& errorString)
 {
+	// Clear any previous error message.
+	errorString = "";
+
 	sUserNode* pUser = this->m_FindUserNodeBySongifyID(songifyUserID);
 	if (pUser == NULL)
 	{
@@ -651,6 +675,9 @@ bool cSongify::UpdateRatingOnSong(unsigned int SongifyUserID, unsigned int songU
 // ****************************************************************************
 bool cSongify::GetSongToPlay(unsigned int SongifyUserID, unsigned int songUniqueID, cSong& foundSong, std::string& errorString)
 {
+	// Clear any previous error message.
+	errorString = "";
+
 	sUserNode* pUser = this->m_FindUserNodeBySongifyID(SongifyUserID);
 	if (pUser == NULL)
 	{
@@ -758,9 +785,6 @@ bool cSongify::FindSong(unsigned int uniqueID, cSong& foundSong)
 	return true;
 }
 
-// -------------------------------------------------------------------------
-// Internal helper functions
-// -------------------------------------------------------------------------
 
 cSongify::sUserNode* cSongify::m_FindUserNodeBySongifyID(unsigned int SongifyUserID) const
 {
@@ -812,7 +836,7 @@ cSong* cSongify::m_FindSongByUniqueID(unsigned int uniqueID) const
 	return NULL;
 }
 
-// Ensure the global song catalogue has at least minCapacity slots.
+// Ensure the global song catalogue has at least minCapacity slots. sdsdsdsd
 bool cSongify::m_EnsureSongCapacity(unsigned int minCapacity)
 {
 	if (this->m_songCapacity >= minCapacity)
