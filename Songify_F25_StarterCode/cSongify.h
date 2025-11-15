@@ -47,6 +47,7 @@ public:
 	// See the cSongify.cpp file for more infomration on how this is supposed to work
 	// 
 	// It will return false if it can't find that user
+	// This returns a COPY of the users library, in the form of a regular dynamic array.
 	bool GetUsersSongLibrary(unsigned int songifyUserID, cSong*& pLibraryArray, unsigned int& sizeOfLibary);
 	// Song array is sorted by this user's rating, from HIGHEST to lowest
 	bool GetUsersSongLibraryAscendingBySongRating(unsigned int songifyUserID, cSong*& pLibraryArray, unsigned int& sizeOfLibary);
@@ -87,17 +88,68 @@ public:
 	// NOTE: This updates the "numberOfTimesPlayed" in THIS USER'S playlist-library
 	// ****************************************************************************
 	bool GetSongToPlay(unsigned int SongifyUserID, unsigned int songUniqueID, cSong& foundSong, std::string& errorString);
-	
+
 	// Note that the songRating is "returned" by reference. 
 	// If it can't find a match (i.e. returns false), then the rating isn't valid. 
-	bool GetCurrentSongRating(unsigned int songifyUserID, unsigned int songUniqueID, unsigned int &songRating);
-	bool GetCurrentSongNumberOfPlays(unsigned int songifyUserID, unsigned int songUniqueID, unsigned int &numberOfPlays);
+	bool GetCurrentSongRating(unsigned int songifyUserID, unsigned int songUniqueID, unsigned int& songRating);
+	bool GetCurrentSongNumberOfPlays(unsigned int songifyUserID, unsigned int songUniqueID, unsigned int& numberOfPlays);
 
 	// This isn't tied to a particular user, so doesn't update any stats
 	// (You can also assume that with duplicates, it will return the 1st one it finds. I don't care which.)
 	bool FindSong(std::string title, std::string artist, cSong& foundSong);
 	bool FindSong(unsigned int uniqueID, cSong& foundSong);
 
+
+private:
+	// Internal structure representing a single song entry in a user's library.
+	struct sUserSongEntry
+	{
+		cSong* pSong;                 // Pointer to the shared song in the global catalogue
+		unsigned int rating;          // Rating for THIS user (0-5)
+		unsigned int numPlays;        // Play count for THIS user
+	};
+
+	// Doubly-linked list node for users managed by Songify.
+	struct sUserNode
+	{
+		cPerson person;               // Stored user information
+		sUserSongEntry* pLibrary;     // Dynamic array representing this user's song library
+		unsigned int librarySize;     // Number of valid entries in the library
+		unsigned int libraryCapacity; // Allocated size of the library array
+		sUserNode* pPrev;
+		sUserNode* pNext;
+
+		sUserNode()
+			: pLibrary(NULL)
+			, librarySize(0)
+			, libraryCapacity(0)
+			, pPrev(NULL)
+			, pNext(NULL)
+		{
+		}
+	};
+
+	// Global catalogue of songs (each cSong is heap-allocated and shared by all users).
+	cSong** m_pSongs;
+	unsigned int m_numSongs;
+	unsigned int m_songCapacity;
+
+	// Doubly-linked list of users.
+	sUserNode* m_pHeadUser;
+	sUserNode* m_pTailUser;
+	unsigned int m_numUsers;
+
+	// Internal helper functions (implementation in cSongify .cpp file).
+	sUserNode* m_FindUserNodeBySongifyID(unsigned int SongifyUserID) const;
+	sUserNode* m_FindUserNodeBySIN(unsigned int SIN, bool& moreThanOne) const;
+	cSong* m_FindSongByUniqueID(unsigned int uniqueID) const;
+
+	bool m_EnsureSongCapacity(unsigned int minCapacity);
+	bool m_EnsureUserLibraryCapacity(sUserNode* pUser, unsigned int minCapacity);
+
+	void m_RemoveSongFromAllUsers(cSong* pSong);
+	void m_DeleteAllUsers();
+	void m_DeleteAllSongs();
 
 };
 
